@@ -154,5 +154,5 @@ Here is the look of our final dataframe:
 
 Now, we have our final datframe ready for some analysis. First thing I want to see is that the comparison between totanl number of cumulative confirmed cases, the total number of cumulative closed cases and the total number of active cases over time. Therefore, the best chart to visualize the changes over time is line chart.  
 
- ![](Images/Saudi_Arabia_June_8.png)  
+ ![](Images/Saudi_Arabia_June_8.jpg)  
 
