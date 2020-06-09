@@ -73,7 +73,9 @@ D_Mortalities = D_Mortalities.iloc[:,4:]
 In this code for example `D_Mortalities = D_Mortalities.iloc[:,4:]`, we are selecting all rows `:` from the fifth columns to the end `4:`.  
 After splitting the those sup-categories, we need to reshape them and then join all these dataframes into one sngle dataframe.
 I used the below to reshape the dataframes and join them into one dataframe. The reason is that I need the columns to represent the sub-categories and rows represent the dates and each city.  
+**Reshaping the dataframes**
 ```
+#'Cases', 'Recoveries', 'Mortalities', 'Active cases'
 C_Active = pd.DataFrame(C_Active.stack())
 C_Active["C_Active"] = C_Active[0]
 C_Active = C_Active.drop(columns=[0])
@@ -83,7 +85,6 @@ C_Cases =pd.DataFrame(C_Cases.stack())
 C_Cases["C_Cases"] = C_Cases[0]
 C_Cases = C_Cases.drop(columns=[0])
 C_Cases.index.names = ["Date","City"]
-
 
 C_Recoveries = pd.DataFrame(C_Recoveries.stack())
 C_Recoveries["C_Recoveries"] = C_Recoveries[0]
@@ -96,15 +97,9 @@ C_Mortalities.index.names = ["Date","City"]
 C_Mortalities = C_Mortalities.drop(columns=[0])
 
 
-
-#'Cases', 'Recoveries', 'Mortalities', 'Active cases'
-D_Active = pd.DataFrame(D_Active.stack())
-D_Active["D_Active"] = D_Active[0]
-D_Active = D_Active.drop(columns=[0])
-D_Active.index.names = ["Date","City"]
-
-
-D_Cases =pd.DataFrame(D_Cases.stack())D_Cases["D_Cases"] = D_Cases[0]
+#'Cases', 'Recoveries', 'Mortalities'
+D_Cases =pd.DataFrame(D_Cases.stack())
+D_Cases["D_Cases"] = D_Cases[0]
 D_Cases = D_Cases.drop(columns=[0])
 D_Cases.index.names = ["Date","City"]
 
