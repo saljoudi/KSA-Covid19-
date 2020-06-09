@@ -104,8 +104,7 @@ D_Active = D_Active.drop(columns=[0])
 D_Active.index.names = ["Date","City"]
 
 
-D_Cases =pd.DataFrame(D_Cases.stack())
-D_Cases["D_Cases"] = D_Cases[0]
+D_Cases =pd.DataFrame(D_Cases.stack())D_Cases["D_Cases"] = D_Cases[0]
 D_Cases = D_Cases.drop(columns=[0])
 D_Cases.index.names = ["Date","City"]
 
@@ -125,6 +124,21 @@ When we stacked the dataframes, we added another index which contains the cities
 Nex, we finally join the dataframes into our final one. However, this datframes contains data for each day by city. To make it r
 ![](Images/Join_them.png)  
 
- However, this datframes contains data for each day by city. To make it represent the whole country, we need to one final step. We will need to sum all rows by dates. To do that, I will the below codes.  
- ![]()
-Next step is creating further columns needed in the analysis. First one is 
+ However, this datframes contains data for each day by city. To make it represent the whole country, we need to one final step. We will need to sum all rows by dates. To do that, I will the below codes.
+```
+Final = Final.reset_index()
+Final["Date"] = pd.to_datetime(Final["Date"])
+Final2 = Final.set_index("Date")
+Final2 = Final2.sum(level=0)
+```
+The first line of code obviously resets the indexes. The second converts the date column into datetime datatype. Then, we set again the date column as an index to calculate the sum of each day for each column and gets rid of the city column.  
+Our final should look like this.  
+
+ ![](Images/Sum.png)  
+
+**Next step is creating further columns needed in the analysis.**  
+
+First one is to create a column. This column I call it the growth factor. The growth factor is is calculated as follow, I simply divide the total number of active cases by the total number of active cases in the previous day. The reason for doing this calculation is that most fear to reach the point where healthcare system cannot handle the amount of infected people in the country. Therefore, this calculation can give an estimate or a picture of by how far the cases are growing. When the number is below 1, it means active cases are decreasing, and when it is above one, it means it is increasing. This variable can be eaasily misinterpreted due to it complexity.  
+For example, if yesterday there were 150,000 active cases, and today had 175,000 active cases, and the next had 200,000 active cases, that means there were 1.17 increase in the second day (by 25,000 cases) and 1.14 in the third day relative to the previous day. While the the growth factors show a slightly samll increase, the cases grew by 50,000 in just two days. 
+
+### To be continued :
