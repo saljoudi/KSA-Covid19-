@@ -1,10 +1,10 @@
 ## The Covid19's Situation in the Kingdom of Saudi Arabia. Facts and Insights.  
   
-I have been working almost everyday in analyzing Covid19 datasets. I first statred with several countries I was interestd in seeing their situations, but then I kind of came to the relization that inside each country there are a lot different cities and regions and anayzing the whole country would bring much of insghts. Therefore, I decided to look for other datasets which have details info by cities. Finally, I came acroos dataset. This dataset usually updated daily and contains all numbers of Covid19 cases, mortalities, recoveries, and active cases by cities. It does povide other info, but I have looked at them yet.  
+I have been working almost everyday in analyzing Covid19 datasets. I first statred with several countries I was interestd in seeing their situations, but then I kind of came to the realization that inside each country there are a lot different cities and regions, so analyzing the whole country would bring much of insghts. Therefore, I decided to look for other datasets which have detailed info by cities. Finally, I came acroos detailed dataset. This dataset is usually updated daily and contains all numbers of Covid19 cases, mortalities, recoveries, and active cases by cities. It does povide other info, but I have not looked into them yet.  
 
-So, in this personal project I am going to walk you through how to handle this dataset & what insights it can offer. I mainly use data visualization tools to show the numbers and percentages. We will also answer some questions which will lead to other questions. 
+So, in this personal project I am going to walk you through the process of handling this dataset & what insights it can offer. I mainly use data visualization tools to show the numbers and percentages. These visuals will also answer some questions which will lead to other questions.
 
-#### Reminder: This is an ongoing project & should be updated daily depending on the availability of the data.  
+#### Reminder: This is an ongoing project & aims at providing insights and facts as well as aserving as a tutorial.  
 
 ##### Okay, let's dive in.  
 **import the needed packages**  
@@ -190,4 +190,25 @@ The code used to generate the second graph is similar to the previous one with d
  *The below chart shows by how much there is an increase or decrease in the number of active cases over time.*  
  
   ![](Images/Active_Growth_Factor.jpg)  
+  
+  
+ **Daily New Cases vs Daily Closed Cases**
+ 
+ Our final step is to visulaize the daily new cases and daily closed cases over time. The reason for this is to explain the and show the pattern of the total number of active cases. The below chart shows the lag between new cases and closed cases. Roughly, it takes two weeks for the closed cases to have similar pattern as the daily new cases. 
+ 
+  ![](Images/New_vs_Closed.jpg)  
+
+ #### *Final point*  
+ 
+There are lot of an unanswered questions I am planning to address in a different project. in the next project, I will be assessing the situation for different cities in the kingdom, mainly because there are some cities have been hit so hard and some not. Furtheremore, I would like to look into the cities with highest numbers in all categories and draw some comparisons. 
+
+ *The dataset can accessed throught this portal*  
+ https://datasource.kapsarc.org/explore/dataset/saudi-arabia-coronavirus-disease-covid-19-situation/information/?disjunctive.daily_cumulative&disjunctive.indicator&disjunctive.event&disjunctive.region&disjunctive.city  
+ 
+ 
+ Thanks for reading it! 
+ 
+ By: Salman Aljoudi  
+ salman.aljoudi@gmail.com
+ 
  
