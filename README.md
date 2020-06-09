@@ -136,14 +136,15 @@ Our final should look like this.
 First column to create is called *growth factor -for Active Cases-.* The growth factor is calculated as follow, I simply divide the total number of active cases by the total number of active cases in the previous day. The reason for doing this calculation is that most countries fear to get to the point where their healthcare systems cannot handle the amount of infected people in the country. Therefore, this calculation can give an estimate or a picture of by how far the cases are growing. The growth factor can be very helpful in arrnging and distributing resources across regions and cities to achieve efficiency & effectiveness.  
 When the number is below 1, it means active cases are decreasing, and when it is above one, it means it is increasing. This variable can be eaasily misinterpreted due to it complexity.  
 For example, if yesterday there were 150,000 active cases, and today had 175,000 active cases, and the next had 200,000 active cases, that means there were 1.17 increase in the second day (by 25,000 cases) and 1.14 in the third day relative to the previous day. While the the growth factors show a slightly samll increase, the cases actually grew by 50,000 in just two days. Further, the grow factor itself does not hold any meaning by itself, but it must be mentioned along with the total number of active cases.  
-The second column is going to be the total number of mortalities and recoveries. After that, we wll end this step with creating two columns to measure the proportions of closed cases & active cases out of total number of confirmed cases.  
+The next two column are going to be the total number of cumulative mortalities and recoveries & total number of daily mortalities and recoveries. After that, we wll end this step with creating two further columns to measure the proportions of closed cases & active cases out of total number of confirmed cases.  
 
 #### I used those four lines of codes to do so.  
 ```
 Final2["Growth Factor"] = round(Final2["C_Active"] / Final2["C_Active"].shift(1),2)
-Final2["Closed_cases"] = Final2["C_Recoveries"] + Final2["C_Mortalities"]
-Final2["Closed Out Of Total Confirmed"] = round(Final2["Closed_cases"] / Final2["C_Cases"],2)
-Final2["Active Out Of Total Confirmed"] = round(Final2["C_Active"] / Final2["C_Cases"],2)
+Final2["C_Closed_cases"] = Final2["C_Recoveries"] + Final2["C_Mortalities"]
+Final2["D_Closed_cases"] = Final2["D_Recoveries"] + Final2["D_Mortalities"]
+Final2["Closed Out Of Total Confirmed"] = round(Final2["D_Closed_cases"] / Final2["C_Cases"],2) *100
+Final2["Active Out Of Total Confirmed"] = round(Final2["C_Active"] / Final2["C_Cases"],2)*100
 ```
 Here is the look of our final dataframe:  
 
