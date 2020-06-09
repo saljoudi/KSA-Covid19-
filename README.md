@@ -145,7 +145,8 @@ Final2["Closed_cases"] = Final2["C_Recoveries"] + Final2["C_Mortalities"]
 Final2["Closed Out Of Total Confirmed"] = round(Final2["Closed_cases"] / Final2["C_Cases"],2)
 Final2["Active Out Of Total Confirmed"] = round(Final2["C_Active"] / Final2["C_Cases"],2)
 ```
-Here is the look of our final dataframe:
+Here is the look of our final dataframe:  
+
  ![](Images/Closed_Active_and_Proportion.png)  
 
 ### To be continued:
