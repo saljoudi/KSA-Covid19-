@@ -187,7 +187,7 @@ The code used to generate the second graph is similar to the previous one with d
  
  **Active Cases' Growth Factor**  
  
- *The below chart shows by how much there a increase or decrease in the number of active cases over time.*  
+ *The below chart shows by how much there is an increase or decrease in the number of active cases over time.*  
  
   ![](Images/Active_Growth_Factor.jpg)  
  
