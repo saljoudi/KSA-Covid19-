@@ -143,8 +143,8 @@ The next two column are going to be the total number of cumulative mortalities a
 Final2["Growth Factor"] = round(Final2["C_Active"] / Final2["C_Active"].shift(1),2)
 Final2["C_Closed_cases"] = Final2["C_Recoveries"] + Final2["C_Mortalities"]
 Final2["D_Closed_cases"] = Final2["D_Recoveries"] + Final2["D_Mortalities"]
-Final2["Closed Out Of Total Confirmed"] = round(Final2["D_Closed_cases"] / Final2["C_Cases"],2) *100
-Final2["Active Out Of Total Confirmed"] = round(Final2["C_Active"] / Final2["C_Cases"],2)*100
+Final2["Closed Out Of Total Confirmed"] = (round(Final2["C_Closed_cases"] / Final2["C_Cases"],2)) *100
+Final2["Active Out Of Total Confirmed"] = (round(Final2["C_Active"] / Final2["C_Cases"],2))*100
 ```
 Here is the look of our final dataframe:  
 
@@ -156,4 +156,27 @@ Now, we have our final datframe ready for some analysis. First thing I want to s
 
  ![](Images/Saudi_Arabia_June_8.jpg)  
  
- By looking at the chart, we notice observe that the closed cases are significantly higher than the total number of active cases. In fact, they are closer to the total number of cumulative confirmed cases to the number of active cases. While that is a good sign of handling the panademic very well, the increase in the total number of active cases is concerning due to several reasons. Largely, the more active cases the more hospital beds, medical staff, & other resources are needed. Further, this increase means there is a higher possibility of higher infection rates. We also observe that the active cases reach a peak on early May and plateaued for roughly ten days. After that period, the number of dropped from roughly 28 thousands to 22 thousands. However, that decrease did not last for a while, and in fact it has been increasing since then, and it is expected to increase gradually for the next few days. There is a conclusion I would like to draw here. I believe the goal of completely stopping the spread of Covid19 is not realistic nor attainable at this time. However, the goal should be slowing the spread rate through issuing  regulations and recommendations to raise awareness about the seriouness of this virus, since there has not been any vaccine or a cure yet. 
+ By looking at the chart, we observe that the total number of closed cases are significantly higher than the total number of active cases. In fact, they are closer to the total number of cumulative confirmed cases to the total number of active cases. While that is a good sign of handling the panademic very well, the increase in the total number of active cases is concerning due to several reasons. Largely, the more active cases the more hospital beds, medical staff, & other resources are needed. Further, this increase means there is a higher possibility of higher infection rates. We also observe that the total number of active cases reached a peak on early May and plateaued for roughly ten days. After that period, the number of dropped from roughly 28 thousands to 22 thousands which is mainly due to the increase in total number of closed cases. However, that decrease did not last for a while, and in fact it has been increasing since then, and it is expected to increase gradually for the next few days. There is a conclusion I would like to draw here. I believe the goal of completely stopping the spread of Covid19 is not realistic nor attainable at this time. However, the goal should be slowing the spread rate through issuing  regulations and recommendations to raise awareness about the seriouness of this virus, since there has not been any vaccine or a cure yet.  
+ 
+ *The code used to generate this graph:*  
+ ```
+plt.figure(figsize=(15,7))
+ax = sns.lineplot(Final2.index,"C_Closed_cases",data=Final2,color="green",label="Cumulative Closed cases")
+ax = sns.lineplot(Final2.index,"C_Active",data=Final2,color="blue",label="Active Active")
+ax = sns.lineplot(Final2.index,"C_Cases",data=Final2,color="black",label="Cumulative Cases")
+ax.set_facecolor("gray")
+plt.xlabel('Date',size=12)
+plt.ylabel('Number',size=12)
+plt.xticks(size=10)
+plt.yticks(size=10)
+plt.title("Saudi Arabia as of June 8",size=15)
+legend = plt.legend(frameon = 1)
+frame = legend.get_frame()
+frame.set_color('white')
+plt.savefig(path/for/the/saved/graph)
+plt.show()
+ ```
+ 
+After looking at the actual numbers of active and closed cases compared to the cumulative confirmed cases, we are going to explore the percentages of those two numbers relative to cumulative confirmed cases. The below grpah shows that.  
+
+ ![](Images/Active_vs_Closed.jpg)  
