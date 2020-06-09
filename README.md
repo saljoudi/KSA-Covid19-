@@ -121,4 +121,6 @@ D_Mortalities["D_Mortalities"] = D_Mortalities[0]
 D_Mortalities = D_Mortalities.drop(columns=[0])
 D_Mortalities.index.names = ["Date","City"]
 ```
-When we stacked the dataframes, we added another index which contains the cities' names. The second line of code basically renames the column number. The third line drops the the column which was automatically created baceuse of the stacking and named 0. The fourth line renames the indexes. Then, the process is repeated for each new category.
+When we stacked the dataframes, we added another index which contains the cities' names. The second line of code basically renames the column number. The third line drops the the column which was automatically created baceuse of the stacking and named 0. The fourth line renames the indexes. Then, the process is repeated for each new category.  
+Nex, we finally join the dataframes into our final one.
+![](Images/Join_them.png) 
