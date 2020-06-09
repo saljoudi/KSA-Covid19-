@@ -180,3 +180,14 @@ plt.show()
 After looking at the actual numbers of active and closed cases compared to the cumulative confirmed cases, we are going to explore the percentages of those two numbers relative to cumulative confirmed cases. The below grpah shows that.  
 
  ![](Images/Active_vs_Closed.jpg)  
+ 
+ The the percentage of active cases out of total cumulative confirmed cases were fluctuating with a slightly dropping trend till early April. On March 30th, the King ordered health ministry to provide free treatment for Covid19 to all people including illigal residents. It is known that the symptoms of Covid19 might take up to 14 days to apear. Besides, there were a lot of illigal residents were anxious about seeking testing and treatment. Therefore, early April the percentage of active cases out of total cumulative confirmed cases rose and plateaued till roughly May 2nd when dramatically dropped by approximately 50%. Since June 2nd, the percentage of active cases has been increasing due to the lower daily number of closed cases compared to the daily number of new cases.  
+
+The code used to generate the second graph is similar to the previous one with different parameters 
+ 
+ **Active Cases' Growth Factor**  
+ 
+ *The below chart shows by how much there a increase or decrease in the number of active cases over time.*  
+ 
+  ![](Images/Active_Growth_Factor.jpg)  
+ 
