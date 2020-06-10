@@ -202,7 +202,7 @@ The code used to generate the second graph is similar to the previous one with d
  
 There are lot of an unanswered questions I am planning to address in a different project. in the next project, I will be assessing the situation for different cities in the kingdom, mainly because there are some cities have been hit so hard and some not. Furtheremore, I would like to look into the cities with highest numbers in all categories and draw some comparisons. 
 
- *The dataset can accessed throught this portal*  
+ *The dataset can be accessed throught this portal*  
  https://datasource.kapsarc.org/explore/dataset/saudi-arabia-coronavirus-disease-covid-19-situation/information/?disjunctive.daily_cumulative&disjunctive.indicator&disjunctive.event&disjunctive.region&disjunctive.city  
  
  
