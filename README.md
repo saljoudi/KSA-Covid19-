@@ -4,10 +4,10 @@ I have been working almost everyday in analyzing Covid19 datasets. I first statr
 
 So, in this personal project I am going to walk you through the process of handling this dataset & what insights it can offer. I mainly use data visualization tools to show the numbers and percentages. These visuals will also answer some questions which will lead to other questions.
 
-#### Reminder: This is an ongoing project & aims at providing insights and facts as well as serving as a tutorial.  
+#### Reminder: This project aims at providing insights & facts as well as serving as a tutorial. I will be updating it when there is a change in the trends.   
 
 ##### Okay, let's dive in.  
-**import the needed packages**  
+**importing the needed packages**  
 
 ```
 import numpy as np  
