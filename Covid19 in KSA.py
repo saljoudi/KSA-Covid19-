@@ -160,7 +160,7 @@ Final2.tail()
 
 # # Graph 1
 
-# In[20]:
+# In[13]:
 
 
 plt.figure(figsize=(15,7))
@@ -183,7 +183,7 @@ plt.show()
 
 # # Graph 2 
 
-# In[21]:
+# In[14]:
 
 
 plt.figure(figsize=(15,7))
@@ -204,7 +204,7 @@ plt.show()
 
 # # Graph 3
 
-# In[22]:
+# In[15]:
 
 
 plt.figure(figsize=(15,7))
@@ -222,7 +222,7 @@ frame.set_color('white')
 plt.show()
 
 
-# In[ ]:
+# In[15]:
 
 
 plt.figure(figsize=(15,7))
