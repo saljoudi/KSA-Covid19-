@@ -2,7 +2,7 @@
   
 I have been working almost everyday in analyzing Covid19 datasets. I first statred with several countries I was interestd in seeing their situations, but then I kind of came to the realization that inside each country there are a lot of different cities and regions, so analyzing the whole country would not bring much of insghts. Therefore, I decided to look for other datasets which have detailed info by cities. Finally, I came acroos a detailed dataset. This dataset is usually updated daily and contains all numbers of Covid19 cases, mortalities, recoveries, and active cases by cities. It does povide other info, but I have not looked into them yet.  
 
-So, in this personal project I am going to walk you through the process of handling this dataset & what insights it can offer. I mainly use data visualization tools to show the numbers and percentages. These visuals will also answer some questions which will lead to other questions. While this project presents the numbers and percentages for the whole country, another project will be add with further detailed analyses for major citites. 
+So, in this personal project I am going to walk you through the process of handling this dataset & what insights it can offer. I mainly use data visualization tools to show the numbers and percentages. These visuals will also answer some questions which will lead to other questions. While this project presents the numbers and percentages for the whole country, another project will be added with further detailed analyses for major citites. 
 
 #### Reminder: This project aims at providing insights & facts as well as serving as a tutorial. I will be updating it when there is a change in the trends.   
 
@@ -25,7 +25,7 @@ The dataset looks like this:
 ![I](Images/df_head.png)  
 
 **Little info about the data.**  
-The reason of doing this porocessing is that the data is mainly divided into two categories which are *Cumulative* and *Daily*.  
+The reason of doing this porocessing is that the dataset is mainly divided into two categories which are *Cumulative* and *Daily*.  
 For each category, there are at least three sub-categories. Cumulative category contains four sub-categories which are Cases, Recoveries, Mortalities & Active cases, while Daily category contains three sub-categories which are Cases, Recoveries & Mortalities.  
 There are over 150 columns in the dataset. However, there is an interesting column named Event. This columns shows the measures have been taken so far by the Saudi governemnt in their fight against Covid19. 
 Further, the other columns represent cities & their numbers for categories and sub-categories along with the dates.
@@ -72,7 +72,7 @@ D_Mortalities = D_Mortalities.iloc[:,4:]
 ```
 In this code for example `D_Mortalities = D_Mortalities.iloc[:,4:]`, we are selecting all rows `:` from the fifth columns to the end `4:`.  
 After splitting the those sup-categories, we need to reshape them and then join all these dataframes into one sngle dataframe.
-I used the below to reshape the dataframes and join them into one dataframe. The reason is that I need the columns to be representative of the sub-categories and rows representative of the dates.    
+I used the below codes to reshape the dataframes and join them into one dataframe. The reason is that I need the columns to be representative of the sub-categories and rows representative of the dates.    
 **Reshaping the dataframes**
 ```
 #'Cases', 'Recoveries', 'Mortalities', 'Active cases'
@@ -152,7 +152,7 @@ Here is the look of our final dataframe:
 
 #### Data Visualization:  
 
-Now, we have our final datframe ready for some analyses. First thing I want to see is the comparison between totanl number of cumulative confirmed cases, the total number of cumulative closed cases & the total number of active cases over time. Therefore, the best chart to visualize the changes over time is line chart.  
+Now, we have our final dataframe ready for some analyses. First thing I want to see is the comparison between total number of cumulative confirmed cases, the total number of cumulative closed cases & the total number of active cases over time. Therefore, the best chart to visualize the changes over time is line chart.  
 
  ![](Images/Saudi_Arabia_June_8.jpg)  
  
@@ -181,7 +181,8 @@ After looking at the actual numbers of active and closed cases compared to the c
 
  ![](Images/Active_vs_Closed.jpg)  
  
- The the percentage of active cases out of total cumulative confirmed cases were fluctuating with a slightly dropping trend till early April. On March 30th, the King ordered health ministry to provide free treatment for Covid19 to all people including illigal residents. It is known that the symptoms of Covid19 might take up to 14 days to apear. Besides, there were a lot of illigal residents were anxious about seeking testing and treatment. Therefore, early April the percentage of active cases out of total cumulative confirmed cases rose and plateaued till roughly May 2nd when dramatically dropped by approximately 50%. Since June 2nd, the percentage of active cases has been increasing due to the lower daily number of closed cases compared to the daily number of new cases.  
+ The the percentages of active cases out of total cumulative confirmed cases were fluctuating with a slightly dropping trend till early April. On March 30th, the King ordered issued a decree to provide free treatment for Covid19 to all illigal residents besides citizens and legal residents. This decrease might be attributed to two possibile factors.  
+It is known that the symptoms of Covid19 might take up to 14 days to appear, so there could have been some infected patients without showing any symptoms. Besides, there were a lot of illigal residents who were anxious about seeking testing and treatment. Therefore, early April the percentages of active cases out of total cumulative confirmed cases rose and plateaued till roughly May 2nd when dramatically dropped by approximately 50%. Since June 2nd, the percentage of active cases has been increasing due to the lower daily number of closed cases compared to the daily number of new cases.  
 
 The code used to generate the second graph is similar to the previous one with different parameters 
  
@@ -211,4 +212,4 @@ There are lot of an unanswered questions I am planning to address in a different
  By: Salman Aljoudi  
  salman.aljoudi@gmail.com
  
- 
+ *Notes:* **the codes will be added ASAP** 
