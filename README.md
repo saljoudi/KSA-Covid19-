@@ -150,7 +150,7 @@ Final2["D_Closed_cases"] = Final2["D_Recoveries"] + Final2["D_Mortalities"]
 Final2["Closed Out Of Total Confirmed"] = round(Final2["C_Closed_cases"] / Final2["C_Cases"]*100,2) 
 Final2["Active Out Of Total Confirmed"] = round(Final2["C_Active"] / Final2["C_Cases"]*100,2)
 Final2["Population"] = 34784867 # According to Worldometers
-Final2["Mortality_Rate"] = round(Final2["C_Mortalities"] / Final2["C_Closed_cases"],2)
+Final2["Mortality_Rate"] = round(Final2["C_Mortalities"] / Final2["C_Closed_cases"] * 100,2) 
 Final2["Death_PMP"] = round(Final2["C_Mortalities"] / Final2["Population"]* 1000000,2)
 ```
 Here is the look of our final dataframe:  
@@ -205,6 +205,15 @@ The code used to generate the second graph is similar to the previous one with d
  Our final step is to visulaize the daily new cases and daily closed cases over time. The reason for this is to explain the and show the pattern of the total number of active cases. The below chart shows the lag between new cases and closed cases. Roughly, it takes two weeks for the closed cases to have similar pattern as the daily new cases. 
  
   ![](Images/New_vs_Closed.jpg)  
+
+
+**Daily Mortality Rate**  
+
+The below chart shows how the mortality rate spiked in the beginning from 0 to 11% mortality rate of all closed cases. After that, the country started to experience lower mortality rate with a fluctuating trend for over 20 days between 6% and 8%. Up to now, the mortality rate is at lowest (1%). 
+
+
+  ![](Images/Mortality_Rate.jpg)  
+
 
  #### *Final point*  
  
