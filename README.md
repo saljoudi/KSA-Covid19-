@@ -135,20 +135,27 @@ Our final should look like this.
 
 First column to create is called *growth factor -for Active Cases-*. The growth factor is calculated as follow; I simply divide the total number of active cases by the total number of active cases in the previous day. The reason for doing this calculation is that most countries fear to get to the point where their healthcare systems cannot handle the amount of infected people in the country. Therefore, this calculation can give an estimate or a picture of by how far the cases are growing. The growth factor can be very helpful in arrnging and distributing resources across regions and cities to achieve efficiency & effectiveness.  
 When the number is below 1, it means active cases are decreasing, and when it is above one, it means it is increasing. This variable can be eaasily misinterpreted due to it complexity.  
-For example, if there were 150,000 active cases yesterday, and today had 175,000 active cases, and the next had 200,000 active cases, that means there were 1.17 increase in the second day (by 25,000 cases) and 1.14 in the third day relative to the previous day. While the the growth factors show a slight increase, the cases actually grew by 50,000 in just two days. Further, the grow factor itself does not hold any meaning, but it must be provided with some context of the total number of active cases.  
-The next two columns are going to be the total number of cumulative mortalities and recoveries (cumulative closed cases) & total number of daily mortalities and recoveries (daily closed cases). After that, we wll end this step with creating two further columns to measure the proportions of closed cases & active cases out of total number of confirmed cases.  
 
-#### I used those four lines of codes to do so.  
+For example, if there were 150,000 active cases yesterday, and today had 175,000 active cases, and the next had 200,000 active cases, that means there were 1.17 increase in the second day (by 25,000 cases) and 1.14 in the third day relative to the previous day. While the the growth factors show a slight increase, the cases actually grew by 50,000 in just two days. Further, the grow factor itself does not hold any meaning, but it must be provided with some context of the total number of active cases.  
+The next two columns are going to be the total number of cumulative mortalities and recoveries (cumulative closed cases) & total number of daily mortalities and recoveries (daily closed cases). After that, we wll create two further two columns to measure the proportions of closed cases & active cases out of total number of confirmed cases.  
+
+Additionally, we will calculate the mortality rate for Covid19 over time as well as its death rate per a million population. To do so, we will need to find the total number of the population in Saudi Arabia for 2020. According to Worldometers, the population is estimated to be slightly over 34 million.  
+The mortality rate, on the other hand, for an ifectious disease is arguably difficult to calculate spicially during an ongoing epidemic. Anyway, there are different ways to calculate it, but the one I personally lean towars to is dividing the total number of deaths by the total number of closed cases, the cases which have an outcome. I am borrowing this method from the Wordlometers which I believe it makes more sense than other methods. 
+
+#### I used those lines of codes to do so.  
 ```
 Final2["Growth Factor"] = round(Final2["C_Active"] / Final2["C_Active"].shift(1),2)
 Final2["C_Closed_cases"] = Final2["C_Recoveries"] + Final2["C_Mortalities"]
 Final2["D_Closed_cases"] = Final2["D_Recoveries"] + Final2["D_Mortalities"]
-Final2["Closed Out Of Total Confirmed"] = (round(Final2["C_Closed_cases"] / Final2["C_Cases"],2)) *100
-Final2["Active Out Of Total Confirmed"] = (round(Final2["C_Active"] / Final2["C_Cases"],2))*100
+Final2["Closed Out Of Total Confirmed"] = round(Final2["C_Closed_cases"] / Final2["C_Cases"]*100,2) 
+Final2["Active Out Of Total Confirmed"] = round(Final2["C_Active"] / Final2["C_Cases"]*100,2)
+Final2["Population"] = 34784867 # According to Worldometers
+Final2["Mortality_Rate"] = round(Final2["C_Mortalities"] / Final2["C_Closed_cases"],2)
+Final2["Death_PMP"] = round(Final2["C_Mortalities"] / Final2["Population"]* 1000000,2)
 ```
 Here is the look of our final dataframe:  
 
- ![](Images/Closed_Active_and_Proportion.png)  
+ ![](Images/Final_df.png)  
 
 #### Data Visualization:  
 
