@@ -223,6 +223,11 @@ There are a lot of unanswered questions I am planning to address in a different 
  https://datasource.kapsarc.org/explore/dataset/saudi-arabia-coronavirus-disease-covid-19-situation/information/?disjunctive.daily_cumulative&disjunctive.indicator&disjunctive.event&disjunctive.region&disjunctive.city  
  
  
+References:  
+-https://www.worldometers.info/coronavirus/coronavirus-death-rate/  
+-https://www.worldometers.info/world-population/saudi-arabia-population/ 
+
+ 
  Thanks for reading it! 
  
  By: *Salman Aljoudi*  
