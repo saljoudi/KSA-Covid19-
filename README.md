@@ -137,10 +137,10 @@ First column to create is called *growth factor -for Active Cases-*. The growth 
 When the number is below 1, it means active cases are decreasing, and when it is above one, it means it is increasing. This variable can be eaasily misinterpreted due to it complexity.  
 
 For example, if there were 150,000 active cases yesterday, and today had 175,000 active cases, and the next had 200,000 active cases, that means there were 1.17 increase in the second day (by 25,000 cases) and 1.14 in the third day relative to the previous day. While the the growth factors show a slight increase, the cases actually grew by 50,000 in just two days. Further, the grow factor itself does not hold any meaning, but it must be provided with some context of the total number of active cases.  
-The next two columns are going to be the total number of cumulative mortalities and recoveries (cumulative closed cases) & total number of daily mortalities and recoveries (daily closed cases). After that, we wll create two further two columns to measure the proportions of closed cases & active cases out of total number of confirmed cases.  
+The next two columns are going to be the total number of cumulative mortalities and recoveries (cumulative closed cases) & total number of daily mortalities and recoveries (daily closed cases). After that, we wll create two further columns to measure the proportions of closed cases & active cases out of total number of confirmed cases.  
 
 Additionally, we will calculate the mortality rate for Covid19 over time as well as its death rate per a million population. To do so, we will need to find the total number of the population in Saudi Arabia for 2020. According to Worldometers, the population is estimated to be slightly over 34 million.  
-The mortality rate, on the other hand, for an ifectious disease is arguably difficult to calculate spicially during an ongoing epidemic. Anyway, there are different ways to calculate it, but the one I personally lean towars to is dividing the total number of deaths by the total number of closed cases, the cases which have an outcome. I am borrowing this method from the Wordlometers which I believe it makes more sense than other methods. 
+The mortality rate, on the other hand, for an ifectious disease is arguably difficult to calculate spicially during an ongoing epidemic. Anyway, there are different ways to calculate it, but the one I personally lean towars to is dividing the total number of deaths by the total number of closed cases, the cases which have an outcome. I am borrowing this method from the Worldometers which I believe it makes more sense than other methods. 
 
 #### I used those lines of codes to do so.  
 ```
@@ -159,7 +159,7 @@ Here is the look of our final dataframe:
 
 #### Data Visualization:  
 
-Now, we have our final dataframe ready for some analyses. First thing I want to see is the comparison between total number of cumulative confirmed cases, the total number of cumulative closed cases & the total number of active cases over time. Therefore, the best chart to visualize the changes over time is line chart.  
+Now, we have our final dataframe ready for some analyses. First thing I want to see is the comparison between total number of cumulative confirmed cases, cumulative closed cases & active cases over time. Therefore, the best chart to visualize the changes over time is line chart.  
 
  ![](Images/Saudi_Arabia_June_8.jpg)  
  
@@ -216,7 +216,6 @@ There are lot of an unanswered questions I am planning to address in a different
  
  Thanks for reading it! 
  
- By: Salman Aljoudi  
- salman.aljoudi@gmail.com
+ By: *Salman Aljoudi*  
+ *salman.aljoudi@gmail.com*
  
- *Notes:* **the codes will be added ASAP** 
