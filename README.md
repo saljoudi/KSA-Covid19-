@@ -1,4 +1,4 @@
-## The Covid19's Situation in the Kingdom of Saudi Arabia. Facts and Insights.  
+## The Covid-19 Situation in the Kingdom of Saudi Arabia. Facts and Insights.  
   
 I have been working almost everyday in analyzing Covid19 datasets. I first started with several countries I was interested in seeing their situations, but then I kind of came to the realization that inside each country there are a lot of different cities and regions, so analyzing the whole country would not bring much of insghts. Therefore, I decided to look for other datasets which have detailed info by cities. Finally, I came across a detailed dataset. This dataset is usually updated daily and contains all numbers of Covid19 cases, mortalities, recoveries, and active cases by cities. It does provide other info, but I have not looked into them yet.  
 
